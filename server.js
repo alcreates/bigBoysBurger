@@ -5,11 +5,18 @@ var methodOverride = require('method-override');
 
 var app = express();
 
+app.use(bodyParser.json());
+
+
 app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.urlencoded({
-	extended: false
-}))
+	extended: true
+}));
+
+app.use(bodyParser.text());
+app.use(bodyParser.json({type:'application/vnd.api+json'}));
+
 
 app.use(methodOverride('_method'))
 var exphbs = require('express-handlebars');
