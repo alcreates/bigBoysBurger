@@ -1,6 +1,6 @@
 
-var connection = require("../config/connection.js");
-
+var connection = require("./connection.js");
+console.log('orm connected');
 var orm = {
 
 	selectAll: function(tableInput, callback){
